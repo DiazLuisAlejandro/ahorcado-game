@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public abstract class Conexion {
-    private String rutaArchivoBD;
+    private String rutaArchivoBD="src/main/resources/data.db";
     private Connection conexion;
     private String userName;
     
@@ -22,6 +22,10 @@ public abstract class Conexion {
     public Conexion(String unaRutaArchivoBD) throws SQLException{
         if (unaRutaArchivoBD==null||unaRutaArchivoBD.isEmpty()) {
             throw new SQLException("El fichero es nulo o vacio");
+        }
+        File file = new File(unaRutaArchivoBD);
+        if (!file.exists()) {
+            throw new SQLException("Error: " + unaRutaArchivoBD);
         }
         rutaArchivoBD = unaRutaArchivoBD;
 

@@ -30,8 +30,8 @@ public class UsuarioServiceModel extends Conexion {
             ResultSet resultado = sentencia.executeQuery();
             usuarios = new ArrayList<UsuarioEntity>();
             while (resultado.next()) {
-                String nombreStr = resultado.getString("nombre");
-                String contraseniaStr = resultado.getString("contrasenia");
+                String nombreStr = resultado.getString("name");
+                String contraseniaStr = resultado.getString("password");
                 UsuarioEntity unUsuario = new UsuarioEntity(nombreStr, contraseniaStr);
                 usuarios.add(unUsuario);
             }
@@ -52,7 +52,7 @@ public class UsuarioServiceModel extends Conexion {
      */
     public boolean insertarUsuario(String nombre, String contrasenia) {
         try {
-            String sql = "INSERT INTO user (name,password) VALUES ('?', '?');";
+            String sql = "INSERT INTO user (name,password) VALUES (?, ?);";
             PreparedStatement sentencia = getConexion().prepareStatement(sql);
             sentencia.setString(1, nombre);
             sentencia.setString(2, contrasenia);
@@ -67,7 +67,7 @@ public class UsuarioServiceModel extends Conexion {
     }
 
     public UsuarioEntity obtenerOneUsuario(String usuarioString) throws SQLException {
-        String sql = "Select * from user where name=" + usuarioString + ";";
+        String sql = "Select * from user where name='" + usuarioString + "';";
         return obtenerUsuario(sql).get(0);
     }
 }

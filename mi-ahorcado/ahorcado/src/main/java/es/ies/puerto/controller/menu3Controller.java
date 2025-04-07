@@ -22,6 +22,7 @@ public class menu3Controller {
 
     @FXML
     PasswordField passwordField;
+    
     @FXML
     Button playButton;
 
@@ -50,12 +51,14 @@ public class menu3Controller {
         if (usuarioLogin == null) {
             return;
         }
+        if (usuarioLogin.getContrasenia().equals(contraseniaString)) {
         Stage stage = (Stage) playButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("menu5.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 360, 500);
         stage.setTitle("Juego");
         stage.setScene(scene);
         stage.show();
+        }
     }
 
     /**

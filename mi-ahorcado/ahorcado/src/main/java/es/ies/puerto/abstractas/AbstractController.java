@@ -8,7 +8,7 @@ import javafx.scene.text.Text;
 public class AbstractController {
 
     
-    static final String PATH_DB="src/main/resources/data.db";
+    protected static final String PATH_DB="src/main/resources/data.db";
 
     private UsuarioServiceModel usuarioServiceModel;
 

@@ -3,6 +3,7 @@ package es.ies.puerto.controller;
 import java.io.IOException;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.model.UsuarioEntity;
 import es.ies.puerto.model.abstractas.UsuarioServiceModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,8 @@ import javafx.stage.Stage;
 
 public class menu4Controller {
     
+    UsuarioEntity usuarioEntity;
+
     @FXML
     TextField userField;
 
@@ -29,6 +32,10 @@ public class menu4Controller {
 
     @FXML
     Button returnButton;
+
+    protected void initialize(UsuarioEntity user){
+        usuarioEntity=user;
+    }
 
     /**
      * 
