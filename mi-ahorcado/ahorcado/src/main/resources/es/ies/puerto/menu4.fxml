@@ -8,32 +8,22 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.menu4Controller">
    <children>
-      <Label contentDisplay="RIGHT" text="User: ">
+      <Label  contentDisplay="RIGHT" text="User: ">
          <graphic>
-            <TextField />
+            <TextField fx:id="userField" />
          </graphic>
       </Label>
-      <Label contentDisplay="RIGHT" layoutX="205.0" layoutY="198.0" text="Email: ">
+      <Label  contentDisplay="RIGHT" layoutX="205.0" layoutY="198.0" text="Password: ">
          <graphic>
-            <TextField />
+           <PasswordField fx:id="passwordField1" />
          </graphic>
       </Label>
-      <Label contentDisplay="RIGHT" layoutX="205.0" layoutY="210.0" text="Email: ">
+      <Label  contentDisplay="RIGHT" layoutX="205.0" layoutY="234.0" text="Password: ">
          <graphic>
-            <TextField />
+            <PasswordField fx:id="passwordField2" />
          </graphic>
       </Label>
-      <Label contentDisplay="RIGHT" layoutX="205.0" layoutY="198.0" text="Password: ">
-         <graphic>
-            <TextField />
-         </graphic>
-      </Label>
-      <Label contentDisplay="RIGHT" layoutX="205.0" layoutY="234.0" text="Password: ">
-         <graphic>
-            <TextField />
-         </graphic>
-      </Label>
-      <Button mnemonicParsing="false" text="Guardar" />
+      <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onSaveButtonClick" text="Guardar" />
       <Button fx:id="returnButton" layoutX="279.0" layoutY="258.0" mnemonicParsing="false" onAction="#onReturnButtonClick" text="Regresar" />
    </children>
 </VBox>

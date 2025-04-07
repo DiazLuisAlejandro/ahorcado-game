@@ -8,6 +8,7 @@ import java.sql.SQLException;
 public abstract class Conexion {
     private String rutaArchivoBD;
     private Connection conexion;
+    private String userName;
     
     public Conexion(){
 
@@ -22,12 +23,6 @@ public abstract class Conexion {
         if (unaRutaArchivoBD==null||unaRutaArchivoBD.isEmpty()) {
             throw new SQLException("El fichero es nulo o vacio");
         }
-
-        File file=new File(unaRutaArchivoBD);
-        if (!file.exists()) {
-            throw new SQLException("No existe la base de datos");
-        }
-
         rutaArchivoBD = unaRutaArchivoBD;
 
     }

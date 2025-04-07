@@ -15,7 +15,7 @@
       </Label>
       <Label contentDisplay="RIGHT" layoutX="10.0" layoutY="34.0" text="Password: ">
          <graphic>
-            <TextField fx:id="passwordField"/>
+            <PasswordField fx:id="passwordField" />
          </graphic>
       </Label>
       <Button fx:id="editButton" mnemonicParsing="false" onAction="#onEditButtonClick" text="Editar" />
